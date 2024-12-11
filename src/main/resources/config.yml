@@ -1,0 +1,95 @@
+Database:
+  Host: localhost
+  Port: 3306
+  User: root
+  Password: root
+  Database: minecraft
+
+WorldGuardRegions:
+  - Arena
+
+Ranking:
+  Copper:
+    DisplayName: "&6Copper"
+    MinimumScore: 0
+
+  Copper1:
+    DisplayName: "&6Copper I"
+    MinimumScore: 50
+
+  Copper2:
+    DisplayName: "&6Copper II"
+    MinimumScore: 100
+
+  Copper3:
+    DisplayName: "&6Copper III"
+    MinimumScore: 150
+
+  Iron:
+    DisplayName: "&7Iron"
+    MinimumScore: 200
+
+  Iron1:
+    DisplayName: "&7Iron I"
+    MinimumScore: 300
+
+  Iron2:
+    DisplayName: "&7Iron II"
+    MinimumScore: 400
+
+  Iron3:
+    DisplayName: "&7Iron III"
+    MinimumScore: 500
+
+  Gold:
+    DisplayName: "&eGold"
+    MinimumScore: 600
+
+  Gold1:
+    DisplayName: "&eGold I"
+    MinimumScore: 750
+
+  Gold2:
+    DisplayName: "&eGold II"
+    MinimumScore: 900
+
+  Gold3:
+    DisplayName: "&eGold III"
+    MinimumScore: 1050
+
+  Diamond:
+    DisplayName: "&bDiamond"
+    MinimumScore: 1200
+
+  Diamond1:
+    DisplayName: "&bDiamond I"
+    MinimumScore: 1400
+
+  Diamond2:
+    DisplayName: "&bDiamond II"
+    MinimumScore: 1600
+
+  Diamond3:
+    DisplayName: "&bDiamond III"
+    MinimumScore: 1800
+
+  Netherite:
+    DisplayName: "&3Netherite"
+    MinimumScore: 2000
+
+  Netherite1:
+    DisplayName: "&3Netherite I"
+    MinimumScore: 2300
+
+  Netherite2:
+    DisplayName: "&3Netherite II"
+    MinimumScore: 2600
+
+  Netherite3:
+    DisplayName: "&3Netherite III"
+    MinimumScore: 2900
+
+  Champion:
+    DisplayName: "&4Champion"
+    MinimumScore: 3200
+
