@@ -1,0 +1,16 @@
+Messages:
+  KillMessage: '<yellow>+<exp> XP <green>for killing <red><player>'
+  KillTitle: '\n<yellow>+<exp> XP'
+  DeathMessage: '<red>You have been killed by <dark_red><player> <red>and lost <exp> XP'
+  DeathTitle: '<red>You Died\n<red>-<exp> XP'
+
+  KillFarmingAttacker: '<red>You have been flagged for farming kills and will not receive any XP or stats'
+  KillFarmingVictim: '<red>Your death was flagged as farming and you will not lose any XP or stats'
+
+  RankUp: '<green>Congratulations! You have ranked up to <yellow><rank>'
+  RankUpTitle: '<green>Congratulations!\n<yellow><rank>'
+  RankDown: '<red>You have been demoted to <yellow><rank>'
+  RankDownTitle: '<red>You have been demoted\n<yellow><rank>'
+
+
+

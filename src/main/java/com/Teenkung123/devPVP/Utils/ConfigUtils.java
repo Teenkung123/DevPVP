@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
+@SuppressWarnings("unused")
 public class ConfigUtils {
 
     private final DevPVP plugin;
@@ -24,7 +25,7 @@ public class ConfigUtils {
 
     public void loadConfig() {
         loadRankings();
-        regionList = config.getStringList("WorldGuardRegions");
+        regionList = config.getStringList("Options.WorldGuardRegions");
     }
 
     private void loadRankings() {
@@ -73,4 +74,17 @@ public class ConfigUtils {
     public List<String> getRegions() {
         return Collections.unmodifiableList(regionList);
     }
+
+    public int getRankIndexFromScore(int score) {
+        int rankIndex = 0;
+        for (int i = 0; i < rankingIndex.size(); i++) {
+            if (score >= rankingIndex.get(i)) {
+                rankIndex = i;
+            } else {
+                break;
+            }
+        }
+        return rankIndex;
+    }
+
 }

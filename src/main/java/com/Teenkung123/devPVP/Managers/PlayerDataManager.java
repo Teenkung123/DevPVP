@@ -11,7 +11,7 @@ import java.util.UUID;
 
 public class PlayerDataManager {
 
-    private DevPVP plugin;
+    private final DevPVP plugin;
     private final HashMap<UUID, PlayerData> playerDataMap = new HashMap<>();
 
     public PlayerDataManager(DevPVP plugin) {
@@ -40,8 +40,13 @@ public class PlayerDataManager {
         playerDataMap.remove(uuid);
     }
 
+    @SuppressWarnings("unused")
     public void saveAllPlayerData() {
         playerDataMap.values().forEach(PlayerData::saveData);
+    }
+
+    public void saveAllPlayerDataNonAsync() {
+        playerDataMap.values().forEach(PlayerData::saveDataNonAsync);
     }
 
     public void savePlayerData(Player player) {

@@ -5,10 +5,7 @@ import com.Teenkung123.devPVP.Events.DeathEvent;
 import com.Teenkung123.devPVP.Events.JoinEvent;
 import com.Teenkung123.devPVP.Events.QuitEvent;
 import com.Teenkung123.devPVP.Managers.PlayerDataManager;
-import com.Teenkung123.devPVP.Utils.ConfigUtils;
-import com.Teenkung123.devPVP.Utils.DatabaseUtils;
-import com.Teenkung123.devPVP.Utils.PlaceholderUtils;
-import com.Teenkung123.devPVP.Utils.WorldguardUtils;
+import com.Teenkung123.devPVP.Utils.*;
 import me.clip.placeholderapi.PlaceholderAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
@@ -19,6 +16,7 @@ import org.bukkit.scheduler.BukkitTask;
 public final class DevPVP extends JavaPlugin {
 
     private ConfigUtils configUtils;
+    private MessageUtils messageUtils;
     private DatabaseUtils databaseUtils;
     private PlayerDataManager playerDataManager;
     private WorldguardUtils worldguardUtils;
@@ -28,6 +26,7 @@ public final class DevPVP extends JavaPlugin {
     public void onEnable() {
         saveDefaultConfig();
         configUtils = new ConfigUtils(this);
+        messageUtils = new MessageUtils(this);
         databaseUtils = new DatabaseUtils(this);
         playerDataManager = new PlayerDataManager(this);
         worldguardUtils = new WorldguardUtils(this);
@@ -53,7 +52,7 @@ public final class DevPVP extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        playerDataManager.saveAllPlayerData();
+        playerDataManager.saveAllPlayerDataNonAsync();
         databaseUtils.stopKeepAliveTask();
         databaseUtils.disconnect();
         if (cleanupTask != null) cleanupTask.cancel();
@@ -83,4 +82,6 @@ public final class DevPVP extends JavaPlugin {
     public WorldguardUtils getWorldguardUtils() {
         return worldguardUtils;
     }
+
+    public MessageUtils getMessageUtils() { return messageUtils; }
 }

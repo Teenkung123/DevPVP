@@ -5,91 +5,122 @@ Database:
   Password: root
   Database: minecraft
 
-WorldGuardRegions:
-  - Arena
+Options:
+  WorldGuardRegions:
+    - Arena
+  KillFarmingCheck:
+    Enable: true
+    #this means the player cannot kill the same player more than 3 times in 10 minutes
+    MaxRecentKill: 3
+    Time: 600
+    #command, available placeholder: <attacker>, <victim>
+    Penalties: []
+
 
 Ranking:
   Copper:
     DisplayName: "&6Copper"
     MinimumScore: 0
+    Rewards:
+      - give <player> diamond 1
 
   Copper1:
     DisplayName: "&6Copper I"
     MinimumScore: 50
+    Rewards: []
 
   Copper2:
     DisplayName: "&6Copper II"
     MinimumScore: 100
+    Rewards: []
 
   Copper3:
     DisplayName: "&6Copper III"
     MinimumScore: 150
+    Rewards: []
 
   Iron:
     DisplayName: "&7Iron"
     MinimumScore: 200
+    Rewards: []
 
   Iron1:
     DisplayName: "&7Iron I"
     MinimumScore: 300
+    Rewards: []
 
   Iron2:
     DisplayName: "&7Iron II"
     MinimumScore: 400
+    Rewards: []
 
   Iron3:
     DisplayName: "&7Iron III"
     MinimumScore: 500
+    Rewards: []
 
   Gold:
     DisplayName: "&eGold"
     MinimumScore: 600
+    Rewards: []
 
   Gold1:
     DisplayName: "&eGold I"
     MinimumScore: 750
+    Rewards: []
 
   Gold2:
     DisplayName: "&eGold II"
     MinimumScore: 900
+    Rewards: []
 
   Gold3:
     DisplayName: "&eGold III"
     MinimumScore: 1050
+    Rewards: []
 
   Diamond:
     DisplayName: "&bDiamond"
     MinimumScore: 1200
+    Rewards: []
 
   Diamond1:
     DisplayName: "&bDiamond I"
     MinimumScore: 1400
+    Rewards: []
 
   Diamond2:
     DisplayName: "&bDiamond II"
     MinimumScore: 1600
+    Rewards: []
 
   Diamond3:
     DisplayName: "&bDiamond III"
     MinimumScore: 1800
+    Rewards: []
 
   Netherite:
     DisplayName: "&3Netherite"
     MinimumScore: 2000
+    Rewards: []
 
   Netherite1:
     DisplayName: "&3Netherite I"
     MinimumScore: 2300
+    Rewards: []
 
   Netherite2:
     DisplayName: "&3Netherite II"
     MinimumScore: 2600
+    Rewards: []
 
   Netherite3:
     DisplayName: "&3Netherite III"
     MinimumScore: 2900
+    Rewards: []
 
   Champion:
     DisplayName: "&4Champion"
     MinimumScore: 3200
+    Rewards: []
 
