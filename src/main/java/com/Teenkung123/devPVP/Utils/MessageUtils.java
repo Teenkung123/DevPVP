@@ -5,14 +5,18 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
+import java.io.InputStream;
 
 public class MessageUtils {
 
     private final FileConfiguration messageConfig;
 
     public MessageUtils(DevPVP plugin) {
-        plugin.saveResource("messages.yml", false);
         File file = new File(plugin.getDataFolder(), "messages.yml");
+        if (!file.exists()) {
+            plugin.saveResource("messages.yml", false);
+            file = new File(plugin.getDataFolder(), "messages.yml");
+        }
         messageConfig = YamlConfiguration.loadConfiguration(file);
     }
 

@@ -9,3 +9,16 @@ softdepend: [ PlaceholderAPI ]
 commands:
   devpvp:
     permission: op
+
+permissions:
+  devpvp.*:
+    children:
+      devpvp.reload: true
+      devpvp.set: true
+      devpvp.get: true
+  devpvp.reload:
+    default: false
+  devpvp.set:
+    default: false
+  devpvp.get:
+    default: false

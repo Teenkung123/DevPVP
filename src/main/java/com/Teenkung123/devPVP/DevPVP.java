@@ -84,4 +84,16 @@ public final class DevPVP extends JavaPlugin {
     }
 
     public MessageUtils getMessageUtils() { return messageUtils; }
+
+    public void reload() {
+        playerDataManager.saveAllPlayerDataNonAsync();
+        cleanupTask.cancel();
+
+        configUtils = new ConfigUtils(this);
+        messageUtils = new MessageUtils(this);
+
+        configUtils.loadConfig();
+
+        startCleanupTask();
+    }
 }

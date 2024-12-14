@@ -101,6 +101,7 @@ public class DatabaseUtils {
                     "ID INT AUTO_INCREMENT PRIMARY KEY, " +
                     "UUID VARCHAR(36) NOT NULL, " +
                     "Score INT NOT NULL, " +
+                    "MaxScore INT NOT NULL, " +
                     "`Kill` INT NOT NULL, " +
                     "`Death` INT NOT NULL, " +
                     "`Streak` INT NOT NULL" +

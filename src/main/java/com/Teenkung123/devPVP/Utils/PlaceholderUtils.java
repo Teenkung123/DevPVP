@@ -37,7 +37,25 @@ public class PlaceholderUtils extends PlaceholderExpansion {
             return String.valueOf(plugin.getPlayerDataManager().getPlayerData(player.getPlayer()).getScore());
         }
         if (identifier.equalsIgnoreCase("rank")) {
-            return plugin.getConfigUtils().getRankDisplayName(plugin.getPlayerDataManager().getPlayerData(player.getPlayer()).getScore());
+            return MiniMessageToLegacy.convert(plugin.getConfigUtils().getRankDisplayNameAsString(plugin.getPlayerDataManager().getPlayerData(player.getPlayer()).getScore()));
+        }
+        if (identifier.equalsIgnoreCase("kills")) {
+            return String.valueOf(plugin.getPlayerDataManager().getPlayerData(player.getPlayer()).getKills());
+        }
+        if (identifier.equalsIgnoreCase("deaths")) {
+            return String.valueOf(plugin.getPlayerDataManager().getPlayerData(player.getPlayer()).getDeaths());
+        }
+        if (identifier.equalsIgnoreCase("killstreak")) {
+            return String.valueOf(plugin.getPlayerDataManager().getPlayerData(player.getPlayer()).getKillstreak());
+        }
+        if (identifier.equalsIgnoreCase("kdr")) {
+            return String.valueOf(plugin.getPlayerDataManager().getPlayerData(player.getPlayer()).getKDR());
+        }
+        if (identifier.equalsIgnoreCase("max_score")) {
+            return String.valueOf(plugin.getPlayerDataManager().getPlayerData(player.getPlayer()).getMaxScore());
+        }
+        if (identifier.equalsIgnoreCase("score_req")) {
+            return String.valueOf(plugin.getConfigUtils().getNextRankThreshold(plugin.getPlayerDataManager().getPlayerData(player.getPlayer()).getScore()) - plugin.getPlayerDataManager().getPlayerData(player.getPlayer()).getScore());
         }
         return null;
     }

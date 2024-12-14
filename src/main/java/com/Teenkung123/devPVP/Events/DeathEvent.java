@@ -80,11 +80,16 @@ public class DeathEvent implements Listener {
                 Placeholder.unparsed("score", String.valueOf(change)),
                 Placeholder.unparsed("current", String.valueOf(attacker.getScore()))
         ));
-        //split at "\n"
-        String[] title = plugin.getMessageUtils().getMessage("KillTitle").split("\n");
+
+        String[] title = plugin.getMessageUtils().getMessage("KillTitle").split("<br>");
+        if (title.length == 0) {
+            title = new String[]{"", ""};
+        } else if (title.length == 1) {
+            title = new String[]{title[0], ""};
+        }
         attacker.getPlayer().showTitle(Title.title(
-                MiniMessage.miniMessage().deserialize(title[0]),
-                MiniMessage.miniMessage().deserialize(title[1])
+                MiniMessage.miniMessage().deserialize(title[0], Placeholder.unparsed("player", event.getEntity().getName()), Placeholder.unparsed("score", String.valueOf(change))),
+                MiniMessage.miniMessage().deserialize(title[1], Placeholder.unparsed("player", event.getEntity().getName()), Placeholder.unparsed("score", String.valueOf(change)))
         ));
 
         // ---------------------------- Saperate between attacker and victim ----------------------------
@@ -95,11 +100,16 @@ public class DeathEvent implements Listener {
                 Placeholder.unparsed("score", String.valueOf(change)),
                 Placeholder.unparsed("current", String.valueOf(victim.getScore()))
         ));
-        //split at "\n"
-        String[] title2 = plugin.getMessageUtils().getMessage("DeathTitle").split("\n");
+
+        String[] title2 = plugin.getMessageUtils().getMessage("DeathTitle").split("<br>");
+        if (title2.length == 0) {
+            title2 = new String[]{"", ""};
+        } else if (title2.length == 1) {
+            title2 = new String[]{title2[0], ""};
+        }
         victim.getPlayer().showTitle(Title.title(
-                MiniMessage.miniMessage().deserialize(title2[0]),
-                MiniMessage.miniMessage().deserialize(title2[1])
+                MiniMessage.miniMessage().deserialize(title2[0], Placeholder.unparsed("player", event.getEntity().getKiller().getName()), Placeholder.unparsed("score", String.valueOf(change))),
+                MiniMessage.miniMessage().deserialize(title2[1], Placeholder.unparsed("player", event.getEntity().getKiller().getName()), Placeholder.unparsed("score", String.valueOf(change)))
         ));
     }
 
